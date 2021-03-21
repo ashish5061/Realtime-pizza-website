@@ -12,7 +12,7 @@ const MongoStore = require("connect-mongo");
 const  passport = require('passport')
 const Emitter = require('events')
 //Database connection
-const url = ' mongodb+srv://Ashish:anger@cluster0.dlzt9.mongodb.net/test';
+const url = ' mongodb+srv://Ashish:anger@cluster0.dlzt9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -30,7 +30,7 @@ app.use(session({
     secret: 'Nepali',
     resave: false,
    
-    store: MongoStore.create({ mongoUrl:' mongodb+srv://Ashish:anger@cluster0.dlzt9.mongodb.net/test' }),
+    store: MongoStore.create({ mongoUrl:' mongodb+srv://Ashish:anger@cluster0.dlzt9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' }),
     saveUninitialized: false,
     cookie: {maxAge: 1000*60*60*24} //24hrs
   
