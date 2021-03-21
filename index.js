@@ -12,7 +12,7 @@ const MongoStore = require("connect-mongo");
 const  passport = require('passport')
 const Emitter = require('events')
 //Database connection
-const url = 'mongodb+srv://pizza:anger@cluster0.s5gsm.mongodb.net/pizza?retryWrites=true&w=majority';
+const url = ' process.env';
 mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -27,10 +27,10 @@ app.set('eventEmitter',eventEmitter)
 
 // session config
 app.use(session({
-    secret: 'Nepali',
+    secret: 'process.env',
     resave: false,
    
-    store: MongoStore.create({ mongoUrl:' mongodb+srv://pizza:anger@cluster0.s5gsm.mongodb.net/pizza?retryWrites=true&w=majority' }),
+    store: MongoStore.create({ mongoUrl:' process.env' }),
     saveUninitialized: false,
     cookie: {maxAge: 1000*60*60*24} //24hrs
   
